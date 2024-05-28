@@ -407,7 +407,7 @@ class CircularFloatingButton extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.grey.shade400,
-            offset: Offset(-2, -2),
+            offset: const Offset(-2, -2),
             blurRadius: 5,
             spreadRadius: 0,
           ),
