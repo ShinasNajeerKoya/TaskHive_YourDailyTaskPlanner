@@ -343,7 +343,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       buttonName: "More",
                       // icon: Icon(CupertinoIcons.line_horizontal_3_decrease),
                       child: AnimatedSwitcher(
-                        duration: Duration(milliseconds: 500),
+                        duration: const Duration(milliseconds: 500),
                         transitionBuilder: (Widget child, Animation<double> animation) {
                           return FadeTransition(opacity: animation, child: child);
                         },
