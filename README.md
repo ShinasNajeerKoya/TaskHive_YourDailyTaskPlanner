@@ -1,16 +1,48 @@
-# daily_planner_flutter_app
+# TaskHive: Your Daily Task Planner
 
-A new Flutter project.
+TaskHive is a simple daily task planner app built using Flutter. It allows users to add, save, and
+delete daily tasks easily.
+
+## Screenshots
+
+- HomePage
+
+- Task
+
+## Features
+
+- Add tasks: Easily add tasks using the "Add" button.
+- Save tasks: Save tasks to keep track of your daily to-dos.
+- Delete tasks: Remove tasks once they are completed or no longer needed.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with TaskHive, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone this repository to your local machine.
+2. Open the project in your preferred Flutter IDE.
+3. Run the app on your preferred device or emulator.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Usage
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Adding a Task**: Tap the "Add" button and enter your task in the provided text field. Tap "Save"
+  to add the task.
+- **Saving a Task**: After adding a task, tap the "Save" button to save it.
+- **Deleting a Task**: To delete a task, tap the "Delete" button.
+
+## Dependencies
+
+TaskHive uses the following dependencies:
+
+- [shared_preferences](https://pub.dev/packages/shared_preferences): For persisting tasks locally.
+- [google_fonts](https://pub.dev/packages/google_fonts): For using custom fonts in the app.
+
+## Contributing
+
+Contributions are welcome! If you encounter any bugs or have suggestions for improvements, please
+open an issue on GitHub.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+

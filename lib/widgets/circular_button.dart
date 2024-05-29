@@ -6,7 +6,6 @@ class CircularFloatingButton extends StatelessWidget {
   final Color color;
   final Widget child;
   final void Function()? onClick;
-
   final String buttonName;
 
   const CircularFloatingButton({

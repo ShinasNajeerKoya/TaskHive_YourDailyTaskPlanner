@@ -1,12 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:daily_planner_flutter_app/widgets/circular_button.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../model/task.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,19 +16,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   late TextEditingController _taskController;
   late List<Task> _tasks;
-
-  //
   late List<bool> _taskDone;
+
   late AnimationController animationController;
-  late Animation degOneTranslationAnimation, degTwoTranslationAnimation, degThreeTranslationAnimation;
-  late Animation rotationAnimation;
+  late Animation<double> degOneTranslationAnimation, degTwoTranslationAnimation, degThreeTranslationAnimation;
+  late Animation<double> rotationAnimation;
 
   double getRadianFromDegree(double degree) {
     double unitRadian = 57.2958;
     return degree / unitRadian;
   }
 
-  //
   Future<void> saveData() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 
@@ -40,35 +35,21 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     List<dynamic> taskList = (tasks != null) ? json.decode(tasks) : [];
     taskList.add(json.encode(t.getMap()));
     preferences.setString('task', json.encode(taskList));
-    _taskController.text = '';
-    log(taskList as String);
-    Navigator.of(context).pop();
+    _taskController.clear();
+    log(taskList.toString());
+    if (mounted) {
+      Navigator.of(context).pop();
+    }
     _getTasks();
   }
 
   void _getTasks() async {
-    _tasks = [];
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String? tasks = preferences.getString('task');
     List<dynamic> taskList = (tasks != null) ? json.decode(tasks) : [];
-    for (dynamic d in taskList) {
-      // print(d.runtimeType);
-      _tasks.add(Task.fromMap(json.decode(d)));
-    }
-    log(_tasks as String);
+    _tasks = taskList.map((task) => Task.fromMap(json.decode(task))).toList();
     _taskDone = List.generate(_tasks.length, (index) => false);
     setState(() {});
-  }
-
-  void _handleCheckboxState(bool? value) {
-    setState(() {
-      if (_taskController.text.isEmpty) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text("checkbox is clicked"),
-          duration: Duration(seconds: 5),
-        ));
-      }
-    });
   }
 
   void updatePendingTaskList() async {
@@ -97,8 +78,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   void initState() {
     super.initState();
     _taskController = TextEditingController();
+    _tasks = [];
+    _taskDone = [];
     _getTasks();
-    //
     animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
     degOneTranslationAnimation = TweenSequence([
       TweenSequenceItem<double>(tween: Tween<double>(begin: 0.0, end: 1.2), weight: 75.0),
@@ -114,16 +96,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     ]).animate(animationController);
     rotationAnimation = Tween(begin: 180.0, end: 0.0)
         .animate(CurvedAnimation(parent: animationController, curve: Curves.easeOut));
-    super.initState();
     animationController.addListener(() {
       setState(() {});
     });
-    //
   }
 
   @override
   void dispose() {
-    _taskController.dispose;
+    _taskController.dispose(); // Fixed call to dispose method
+    animationController.dispose();
     super.dispose();
   }
 
@@ -136,47 +117,49 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Daily Planner",
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          "TaskHive: Your Daily Task Planner",
+          style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
         backgroundColor: primaryPurple,
       ),
       body: Stack(
         children: [
-          (_tasks == null)
+          (_tasks.isEmpty)
               ? const Center(child: Text("No tasks yet!"))
               : ListView(
                   children: _tasks
-                      .map((e) => Container(
-                            height: 70,
-                            width: width,
-                            margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
-                            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                            alignment: Alignment.centerLeft,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Colors.black)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  e.task!,
-                                  style: const TextStyle(fontSize: 17),
-                                ),
-                                Checkbox(
-                                  value: _taskDone[_tasks.indexOf(e)],
-                                  onChanged: (val) {
-                                    setState(() {
-                                      _handleCheckboxState(val);
-                                      _taskDone[_tasks.indexOf(e)] = val!;
-                                    });
-                                  },
-                                ),
-                              ],
-                            ),
-                          ))
-                      .toList()),
+                      .map(
+                        (e) => Container(
+                          height: 70,
+                          width: width,
+                          margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                          alignment: Alignment.centerLeft,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.black)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                e.task!,
+                                style: const TextStyle(fontSize: 17),
+                              ),
+                              Checkbox(
+                                value: _taskDone[_tasks.indexOf(e)],
+                                onChanged: (val) {
+                                  setState(() {
+                                    _taskDone[_tasks.indexOf(e)] = val!;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
           Positioned(
             bottom: 15,
             right: 15,
@@ -208,7 +191,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         width: 55,
         color: primaryPurple,
         buttonName: "More",
-        // icon: Icon(CupertinoIcons.line_horizontal_3_decrease),
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 500),
           transitionBuilder: (Widget child, Animation<double> animation) {
@@ -266,9 +248,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           width: 45,
           color: primaryPurple,
           buttonName: "Save",
-          child: const Icon(CupertinoIcons.floppy_disk),
+          child: const Icon(CupertinoIcons.floppy_disk, size: 20),
           onClick: () {
-            log("save button is pressed");
+            log("Save button is pressed");
             updatePendingTaskList();
           },
         ),
@@ -288,98 +270,34 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           width: 45,
           color: primaryPurple,
           buttonName: "Add",
-          child: const Icon(Icons.add),
+          child: const Icon(CupertinoIcons.add, size: 20),
           onClick: () {
             log("add button is pressed");
-            taskAddingSheet(context, width);
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text("Add Task"),
+                content: TextField(
+                  controller: _taskController,
+                  decoration: const InputDecoration(hintText: "Enter task here"),
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text("Cancel"),
+                  ),
+                  TextButton(
+                    onPressed: saveData,
+                    child: const Text("Save"),
+                  ),
+                ],
+              ),
+            );
           },
         ),
       ),
     );
-  }
-
-  Future<dynamic> taskAddingSheet(BuildContext context, double width) {
-    return showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) => Container(
-        height: 225,
-        padding: const EdgeInsets.all(10.0),
-        color: Colors.white,
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Add Text",
-                  style: TextStyle(color: Colors.brown),
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.of(context).pop(),
-                  child: const Icon(Icons.close),
-                )
-              ],
-            ),
-            const Divider(),
-            const SizedBox(height: 20),
-            TextField(
-              controller: _taskController,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  fillColor: Colors.transparent,
-                  filled: true,
-                  hintText: "Enter Task"),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    width: (width / 2) - 15,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10), // Rectangular shape
-                          ),
-                        ),
-                      ),
-                      onPressed: () => _taskController.text = '',
-                      child: const Text("Reset"),
-                    ),
-                  ),
-                  SizedBox(
-                    width: (width / 2) - 15,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10), // Rectangular shape
-                          ),
-                        ),
-                      ),
-                      onPressed: () {
-                        saveData();
-                      },
-                      child: const Text("Add"),
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('_taskController', _taskController));
   }
 }
