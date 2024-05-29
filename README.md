@@ -8,6 +8,10 @@ delete daily tasks easily.
 - HomePage
 - ![1_homePage](https://github.com/ShinasKoya00/TaskHive_YourDailyTaskPlanner/assets/136962350/602f07cb-74e3-4ba6-9417-13e2f8c32375)
 
+- <img src="https://github.com/ShinasKoya00/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/1_homePage.jpg" width="200" height="200" />
+
+- 
+
 
 - Task
 
