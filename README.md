@@ -6,7 +6,8 @@ delete daily tasks easily.
 ## Screenshots
 
 - HomePage
- <img src="https://github.com/ShinasKoya00/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/1_homePage.jpg" width="200" height="450" />
+  
+- <img src="https://github.com/ShinasKoya00/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/1_homePage.jpg" width="200" />
 
   
 - Task
