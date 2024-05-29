@@ -10,8 +10,7 @@ delete daily tasks easily.
 
   
 - Task
-- ![TaskHive_screenRecord](https://github.com/ShinasKoya00/TaskHive_YourDailyTaskPlanner/assets/136962350/b8e4f293-f231-4aea-b0da-73ba28f65250)
-- <img src="https://github.com/asd/privategithubrepo/images/output/video1.gif" width="48">
+- <img src="[https://github.com/asd/privategithubrepo/images/output/video1.gif](https://private-user-images.githubusercontent.com/136962350/334700562-b8e4f293-f231-4aea-b0da-73ba28f65250.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY5NjgzNjQsIm5iZiI6MTcxNjk2ODA2NCwicGF0aCI6Ii8xMzY5NjIzNTAvMzM0NzAwNTYyLWI4ZTRmMjkzLWYyMzEtNGFlYS1iMGRhLTczYmEyOGY2NTI1MC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyOVQwNzM0MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MGRkMzI1ZWUxOGMyNTY3OTlkNzY2MmI0ZTdmOGYyZWZlMTdhMDljNTIyYzhmZmVkZmVjYTg3YTYzZGYwYTZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.rzT94cN4JwZRJejqQSm9LTdjxsWsvRjvPqQFZuoPRX8)" width="48">
 
 
 
