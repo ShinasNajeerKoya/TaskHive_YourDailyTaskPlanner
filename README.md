@@ -11,6 +11,8 @@ delete daily tasks easily.
   
 - Task
 - ![TaskHive_screenRecord](https://github.com/ShinasKoya00/TaskHive_YourDailyTaskPlanner/assets/136962350/b8e4f293-f231-4aea-b0da-73ba28f65250)
+- <img src="https://github.com/asd/privategithubrepo/images/output/video1.gif" width="48">
+
 
 
 
