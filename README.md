@@ -7,11 +7,16 @@ delete daily tasks easily.
 
 - HomePage
 
-   <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/splash_1.jpg" width="160" />
-  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/splash_2.jpg" width="160" /> 
-  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/homepage_1.jpg" width="160" />
-  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/homepage_2.jpg" width="160" /> 
-  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/notes_list.jpg" width="160" />
+[//]: # ()
+[//]: # (   <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/splash_1.jpg" width="160" />)
+
+[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/splash_2.jpg" width="160" /> )
+
+[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/homepage_1.jpg" width="160" />)
+
+[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/homepage_2.jpg" width="160" /> )
+
+[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/notes_list.jpg" width="160" />)
 
 
 - Task
