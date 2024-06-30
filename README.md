@@ -5,23 +5,13 @@ delete daily tasks easily.
 
 ## Screenshots
 
-- HomePage
-
-[//]: # ()
-[//]: # (   <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/splash_1.jpg" width="160" />)
-
-[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/splash_2.jpg" width="160" /> )
-
-[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/homepage_1.jpg" width="160" />)
-
-[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/homepage_2.jpg" width="160" /> )
-
-[//]: # (  <img src="https://github.com/ShinasKoya00/NoteTrove_OrganizeYourThoughts/blob/master/assets/application_snapshots/notes_list.jpg" width="160" />)
+ <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_splash.png" width="160" /> <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_home.png" width="160" /> <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_open_menu.png" width="160" /> <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_task.png" width="160" /><img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_task_list2.png" width="160" />
+ 
+ <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_button_info1.png" width="160" /> <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_button_info2.png" width="160" /> <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_task_assign.png" width="160" /> <img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_task_list.png" width="160" /><img src="https://github.com/ShinasNajeerKoya/TaskHive_YourDailyTaskPlanner/blob/main/assets/application_snapshots/task_hive_task_selection.png" width="160" />
 
 
-- Task
 
-  <img src="https://private-user-images.githubusercontent.com/136962350/334700562-b8e4f293-f231-4aea-b0da-73ba28f65250.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY5Njg1MjAsIm5iZiI6MTcxNjk2ODIyMCwicGF0aCI6Ii8xMzY5NjIzNTAvMzM0NzAwNTYyLWI4ZTRmMjkzLWYyMzEtNGFlYS1iMGRhLTczYmEyOGY2NTI1MC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyOVQwNzM3MDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YjdjNzJhZmQ1YjAyMGY2ZDJiMmFhOTkwZDcyODRhNzE0NmU4YmY5ODYzYjJhN2E4MTA5MzdjOTQ4NDg5OGQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.qBGtuJzvraiVM-ABKucDm5FeBABmwyynFNj8DjTDn1U" width="200">
+
 
 ## Features
 
