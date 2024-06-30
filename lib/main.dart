@@ -1,5 +1,5 @@
+import 'package:daily_planner_flutter_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:daily_planner_flutter_app/screens/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }
